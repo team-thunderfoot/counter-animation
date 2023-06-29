@@ -2,28 +2,44 @@ import gsap from "gsap";
 
 class CounterAnimation {
     constructor(payload) {
-        this.counter = payload;
-        this.target = parseFloat(this.counter.innerText);
-        this.tl = gsap.timeline();
+        this.elements = payload.elements;
+        this.regionFormat = payload.regionFormat ? payload.regionFormat : "en-US";
+        this.separator = payload.separator ? payload.separator : ",";
+        this.duration = payload.duration ? payload.duration : 2;
+
+        this.init();
     }
 
-    reset() {
-        this.counter.innerText = "0";
-    }
+    init() {
+        this.elements.forEach((element) => {
+            this.number = element.innerText;
+            
+            element.innerText = "0";
 
-    play() {
-        this.tl.to(
-            this.counter,
-            {
-                duration: 2,
-                innerText: Math.round(this.target),
-                ease: "power2.out",
-                onUpdate: () => {
-                    this.counter.innerText = Math.round(this.counter.innerText).toLocaleString();
+            if (element.dataset.counterDuration) {
+                this.duration = element.dataset.counterDuration;
+            }
+
+            if (this.regionFormat != "en-US") {
+                this.separator = ".";
+            }
+
+            this.target = this.number.replace(`${this.separator}`, "");
+            console.log(this.number, this.target, "   separator:", this.separator);
+
+
+            gsap.to(
+                element,
+                {
+                    duration: this.duration,
+                    innerText: this.target,
+                    ease: "power2.out",
+                    onUpdate: () => {
+                        element.innerText = Math.round(element.innerText).toLocaleString(this.regionFormat);
+                    },
                 },
-            },
-            0.5
-        );
+            );
+        });
     }
 }
 
