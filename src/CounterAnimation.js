@@ -1,4 +1,7 @@
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 class CounterAnimation {
     constructor(payload) {
@@ -6,6 +9,7 @@ class CounterAnimation {
         this.regionFormat = payload.regionFormat ? payload.regionFormat : "en-US";
         this.separator = payload.separator ? payload.separator : ",";
         this.duration = payload.duration ? payload.duration : 2;
+        this.scrollStart = payload.scrollStart ? payload.scrollStart : "80%";
 
         this.init();
     }
@@ -28,7 +32,7 @@ class CounterAnimation {
                 this.target = this.number.replace(/,/g, "");
             }
             
-            console.log(this.number, this.target, "   separator:", this.separator);
+            console.log(this.number, this.target, "   separator:", this.separator, this.scrollStart);
 
             gsap.to(element, {
                 duration: this.duration,
@@ -36,6 +40,11 @@ class CounterAnimation {
                 ease: "power2.out",
                 onUpdate: () => {
                     element.innerText = Math.round(element.innerText).toLocaleString(this.regionFormat);
+                },
+                scrollTrigger: {
+                    trigger: element,
+                    markers: true,
+                    start: `top ${this.scrollStart}`,
                 },
             });
         });

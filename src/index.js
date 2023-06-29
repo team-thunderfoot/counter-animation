@@ -7,13 +7,14 @@ class Page {
     init() {
         new CounterAnimation({
             elements: document.querySelectorAll(".example-1"),
-            regionFormat: 'en-US',
-            duration: 1
+            regionFormat: "en-US",
+            duration: 1,
+            scrollStart: "center",
         });
         new CounterAnimation({
             elements: document.querySelectorAll(".example-2"),
-            regionFormat: 'es-ES',
-            separator: '.'
+            regionFormat: "es-ES",
+            separator: ".",
         });
     }
 }
