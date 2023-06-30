@@ -1,4 +1,33 @@
 section{
-    margin: 5rem 10%;
+    padding: 3rem 10%;
+    background-color: aliceblue;
 }
-.separator{height: 50vh}
+.separator{height: 10vh}
+
+p{
+    font-size: 2rem;
+}
+
+.title{
+    text-align: center;
+    margin: 3rem 5rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+h2{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;  
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+.count-wrapper{
+    text-align: center;
+    background-color: beige;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}

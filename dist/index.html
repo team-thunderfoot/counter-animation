@@ -14,17 +14,61 @@
         <title>Counter Animation - By Thunderfoot</title>
     </head>
     <body>
+        <h1 class="title">Counter Animation - By Thunderfoot</h1>
+        <section>
+            <h2>Example 1:</h2>
+            <h3>No HTML attributes</h3>
+            <h3>JS Class Configuration options:</h3>
+            <ul>
+                <li>elements: document.querySelectorAll(".example-1")</li>
+                <li>regionFormat: "en-US"</li>
+                <li>duration: 1</li>
+                <li>scrollStart: "center"</li>
+            </ul>
+            <code>
+                new CounterAnimation( <br />
+                &emsp;{ <br />
+                &emsp;&emsp;elements: document.querySelectorAll(".example-1"),<br />
+                &emsp;&emsp;regionFormat: "en-US",<br />
+                &emsp;&emsp;duration: 1,<br />
+                &emsp;&emsp;scrollStart: "center",<br />
+                &emsp;} <br />
+                );
+            </code>
+            <div class="count-wrapper">
+                <p class="example-1">20,000</p>
+                <p class="example-1">20,000,000</p>
+            </div>
+        </section>
         <div class="separator"></div>
         <section>
-            <h1 class="example-1">20,000</h1>
-            <h1 class="example-1">20,000,000</h1>
-        </section>
-        <section>
-            <h1 class="example-2" data-counter-duration="5">20.000</h1>
-            <h1 class="example-2" data-counter-duration="3">20.000.000</h1>
+            <h2>Example 2:</h2>
+            <h3>HTML attributes</h3>
+            <ul>
+                <li>first number (20.000) &rarr; data-counter-duration="5"</li>
+                <li>second number (20.000.000) &rarr; data-counter-duration="3"</li>
+            </ul>
+            <h3>JS Class Configuration options:</h3>
+            <ul>
+                <li>elements: document.querySelectorAll(".example-2")</li>
+                <li>regionFormat: "es-ES"</li>
+                <li>separator: "."</li>
+            </ul>
+            <code>
+                new CounterAnimation( <br />
+                &emsp;{ <br />
+                &emsp;&emsp;elements: document.querySelectorAll(".example-2"),<br />
+                &emsp;&emsp;regionFormat: "es-ES",<br />
+                &emsp;&emsp;separator: ".",<br />
+                &emsp;} <br />
+                );
+            </code>
+            <div class="count-wrapper">
+                <p class="example-2" data-counter-duration="5">20.000</p>
+                <p class="example-2" data-counter-duration="3">20.000.000</p>
+                </div>
         </section>
         <div class="separator"></div>
-
         <script src="./main.js"></script>
     </body>
 </html>

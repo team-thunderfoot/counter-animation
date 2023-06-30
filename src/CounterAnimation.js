@@ -43,7 +43,6 @@ class CounterAnimation {
                 },
                 scrollTrigger: {
                     trigger: element,
-                    markers: true,
                     start: `top ${this.scrollStart}`,
                 },
             });
