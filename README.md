@@ -21,11 +21,11 @@ class Index {
     }
     init() {
         new CounterAnimation({
-            elements: document.querySelectorAll(".example-1"),
-            regionFormat: "en-US",
-            separator: ",",
-            duration: 1.5,
-            scrollStart: "center",
+            elements: document.querySelectorAll(".example-1"), //required -> the elements that will be translated
+            regionFormat: "en-US", // region format for number formatting
+            separator: ",", // separator character for large numbers
+            duration: 1.5, //duration of the animation (in seconds)
+            scrollStart: "center", //scroll trigger start position
         });
     }
 }
@@ -47,10 +47,10 @@ new Index();
 
 • `elements (required):` represents **the elements that will be animated**. It is expected to be an array of DOM elements, but it can be just one element. **It's the only required option**.
 
-• `regionFormat:` An optional parameter specifying the region format for number formatting. **The default value is "en-US"**.
+• `regionFormat (optional):` the region format for number formatting. **The default value is "en-US"**.
 
-• `separator:` An optional parameter specifying the separator character for large numbers. **The default value is ","**.
+• `separator (optional):` the separator character for large numbers. **The default value is ","**.
 
-• `duration:` An optional parameter specifying the duration of the animation in seconds. **The default value is 2 seconds**.
+• `duration (optional):` the duration of the animation in seconds. **The default value is 2 seconds**.
 
-• `scrollStart:` An optional parameter specifying the scroll trigger start position. **The default value is "80%"**.
+• `scrollStart (optional):` the scroll trigger start position. **The default value is "80%"**.
