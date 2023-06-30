@@ -8,7 +8,8 @@ class Page {
         new CounterAnimation({
             elements: document.querySelectorAll(".example-1"),
             regionFormat: "en-US",
-            duration: 1,
+            separator: ",",
+            duration: 1.5,
             scrollStart: "center",
         });
         new CounterAnimation({
