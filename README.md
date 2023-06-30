@@ -36,7 +36,7 @@ new Index();
 
 ## HTML attributes
 
-• `data-counter-duration:` If the element has a data-counter-duration attribute, it overrides the default animation duration with the value specified in the attribute. **The duration hierarchy is: default value (2 seconds) < duration config value (determined in JS class parameters) < data-counter-duration (determined as a HTML attribute)**
+• `data-counter-duration (optional):` If the element has a data-counter-duration attribute, it overrides the default animation duration with the value specified in the attribute. **The duration hierarchy is: default value (2 seconds) < duration config value (determined in JS class parameters) < data-counter-duration (determined as a HTML attribute)**
 
 ```html
 <span class="example-1" data-counter-duration="5">20.000</span>
