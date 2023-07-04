@@ -25,7 +25,7 @@ class Index {
             regionFormat: "en-US", // region format for number formatting
             separator: ",", // separator character for large numbers
             duration: 1.5, //duration of the animation (in seconds)
-            scrollStart: "center", //scroll trigger start position
+            scrollStart: "center", //scroll trigger start position -> "top" / "center" / "bottom" / "X%"" / "Xpx"
         });
     }
 }
@@ -51,6 +51,6 @@ new Index();
 
 • `separator (optional):` the separator character for large numbers. **The default value is ","**.
 
-• `duration (optional):` the duration of the animation in seconds. **The default value is 2 seconds**.
+• `duration (optional):` the duration of the animation in seconds. **The default value is 2 seconds**. Allowed value: "number"
 
-• `scrollStart (optional):` the scroll trigger start position. **The default value is "80%"**.
+• `scrollStart (optional):` the scroll trigger start position. **The default value is "80%"**. Allowed values: "top" / "center" / "bottom" / "X%"" / "Xpx".
