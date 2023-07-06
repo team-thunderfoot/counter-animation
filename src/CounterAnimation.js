@@ -23,16 +23,12 @@ class CounterAnimation {
             if (this.DOM.element.dataset.counterDuration) {
                 this.duration = this.DOM.element.dataset.counterDuration;
             }
-
-            console.log(this.regionFormat != "en-US");
-
+ 
             if (this.regionFormat != "en-US") {
                 this.target = this.number.replace(/\./g, "");
             } else {
                 this.target = this.number.replace(/,/g, "");
             }
-
-            console.log(this.number, this.target, "   separator:", this.separator, this.scrollStart);
 
             gsap.to(this.DOM.element, {
                 duration: this.duration,
