@@ -1,6 +1,6 @@
 # counter-animation
 
-The `counter-animation` allows you to create counter animations on HTML elements by specifying configuration options such as the elements to animate, animation duration, number formatting, and scroll trigger settings.
+The `counter-animation` allows you to create counter animations on HTML element by specifying configuration options such as the element to animate, animation duration, number formatting, and scroll trigger settings.
 
 [Here's an example](https://team-thunderfoot.github.io/counter-animation/)
 
@@ -20,12 +20,14 @@ class Index {
         this.init();
     }
     init() {
-        new CounterAnimation({
-            elements: document.querySelectorAll(".example-1"), //required -> the elements that will be translated
-            regionFormat: "en-US", // region format for number formatting
-            separator: ",", // separator character for large numbers
-            duration: 1.5, //duration of the animation (in seconds)
-            scrollStart: "center", //scroll trigger start position -> "top" / "center" / "bottom" / "X%"" / "Xpx"
+        document.querySelectorAll(".example-1").forEach((element) => {
+            new CounterAnimation({
+                element: element,
+                regionFormat: "en-US",
+                separator: ",",
+                duration: 1.5,
+                scrollStart: "center",
+            });
         });
     }
 }
@@ -40,12 +42,11 @@ new Index();
 
 ```html
 <span class="example-1" data-counter-duration="5">20.000</span>
-
 ```
 
 ## JS Options
 
-• `elements (required):` represents **the elements that will be animated**. It is expected to be an array of DOM elements, but it can be just one element. **It's the only required option**.
+• `element (required):` represents **the element that will be animated**. **It's the only required option**.
 
 • `regionFormat (optional):` the region format for number formatting. **The default value is "en-US"**.
 

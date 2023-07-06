@@ -5,17 +5,22 @@ class Page {
         this.init();
     }
     init() {
-        new CounterAnimation({
-            elements: document.querySelectorAll(".example-1"),
-            regionFormat: "en-US",
-            separator: ",",
-            duration: 1.5,
-            scrollStart: "center",
+        document.querySelectorAll(".example-1").forEach((element) => {
+            new CounterAnimation({
+                element: element,
+                regionFormat: "en-US",
+                separator: ",",
+                duration: 1.5,
+                scrollStart: "center",
+            });
         });
-        new CounterAnimation({
-            elements: document.querySelectorAll(".example-2"),
-            regionFormat: "es-ES",
-            separator: ".",
+
+        document.querySelectorAll(".example-2").forEach((element) => {
+            new CounterAnimation({
+                element: element,
+                regionFormat: "es-ES",
+                separator: ".",
+            });
         });
     }
 }

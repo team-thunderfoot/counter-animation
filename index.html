@@ -26,14 +26,15 @@
                 <li>scrollStart: "center"</li>
             </ul>
             <code>
-                new CounterAnimation( <br />
-                &emsp;{ <br />
-                &emsp;&emsp;elements: document.querySelectorAll(".example-1"),<br />
-                &emsp;&emsp;regionFormat: "en-US",<br />
-                &emsp;&emsp;duration: 1,<br />
-                &emsp;&emsp;scrollStart: "center",<br />
-                &emsp;} <br />
-                );
+                document.querySelectorAll(".example-1").forEach((element) => {<br />
+                &emsp;&emsp;new CounterAnimation({<br />
+                &emsp;&emsp;&emsp;&emsp;element: element,<br />
+                &emsp;&emsp;&emsp;&emsp;regionFormat: "en-US",<br />
+                &emsp;&emsp;&emsp;&emsp;separator: ",",<br />
+                &emsp;&emsp;&emsp;&emsp;duration: 1.5,<br />
+                &emsp;&emsp;&emsp;&emsp;scrollStart: "center",<br />
+                &emsp;&emsp;});<br />
+                });<br />
             </code>
             <div class="count-wrapper">
                 <p class="example-1">20,000</p>
@@ -55,18 +56,18 @@
                 <li>separator: "."</li>
             </ul>
             <code>
-                new CounterAnimation( <br />
-                &emsp;{ <br />
-                &emsp;&emsp;elements: document.querySelectorAll(".example-2"),<br />
-                &emsp;&emsp;regionFormat: "es-ES",<br />
-                &emsp;&emsp;separator: ".",<br />
-                &emsp;} <br />
-                );
+                document.querySelectorAll(".example-1").forEach((element) => {<br />
+                &emsp;&emsp;new CounterAnimation({<br />
+                &emsp;&emsp;&emsp;&emsp;element: element,<br />
+                &emsp;&emsp;&emsp;&emsp;regionFormat: "es-ES",<br />
+                &emsp;&emsp;&emsp;&emsp;separator: ".",<br />
+                &emsp;&emsp;});<br />
+                });<br />
             </code>
             <div class="count-wrapper">
                 <p class="example-2" data-counter-duration="5">20.000</p>
                 <p class="example-2" data-counter-duration="3">20.000.000</p>
-                </div>
+            </div>
         </section>
         <div class="separator"></div>
         <script src="./dist/main.js"></script>
