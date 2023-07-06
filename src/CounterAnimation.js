@@ -16,31 +16,31 @@ class CounterAnimation {
     }
 
     init() {
-            this.number = this.DOM.element.innerText;
+        this.number = this.DOM.element.innerText;
 
-            this.DOM.element.innerText = "0";
+        this.DOM.element.innerText = "0";
 
-            if (this.DOM.element.dataset.counterDuration) {
-                this.duration = this.DOM.element.dataset.counterDuration;
-            }
- 
-            if (this.regionFormat != "en-US") {
-                this.target = this.number.replace(/\./g, "");
-            } else {
-                this.target = this.number.replace(/,/g, "");
-            }
+        if (this.DOM.element.dataset.counterDuration) {
+            this.duration = this.DOM.element.dataset.counterDuration;
+        }
 
-            gsap.to(this.DOM.element, {
-                duration: this.duration,
-                innerText: this.target,
-                ease: "power2.out",
-                onUpdate: () => {
-                    this.DOM.element.innerText = Math.round(this.DOM.element.innerText).toLocaleString(this.regionFormat);
-                },
-                scrollTrigger: {
-                    trigger: this.DOM.element,
-                    start: `top ${this.scrollStart}`,
-                },
+        if (this.regionFormat != "en-US") {
+            this.target = this.number.replace(/\./g, "");
+        } else {
+            this.target = this.number.replace(/,/g, "");
+        }
+
+        gsap.to(this.DOM.element, {
+            duration: this.duration,
+            innerText: this.target,
+            ease: "power2.out",
+            onUpdate: () => {
+                this.DOM.element.innerText = Math.round(this.DOM.element.innerText).toLocaleString(this.regionFormat);
+            },
+            scrollTrigger: {
+                trigger: this.DOM.element,
+                start: `top ${this.scrollStart}`,
+            },
         });
     }
 }
