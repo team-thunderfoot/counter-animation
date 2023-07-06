@@ -1,6 +1,6 @@
 # counter-animation
 
-The `counter-animation` allows you to create counter animations on HTML element by specifying configuration options such as the element to animate, animation duration, number formatting, and scroll trigger settings.
+The `counter-animation` allows you to create counter animations on an HTML element by specifying configuration options such as the element to animate, animation duration, number formatting, and scroll trigger settings.
 
 [Here's an example](https://team-thunderfoot.github.io/counter-animation/)
 
