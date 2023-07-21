@@ -16,32 +16,50 @@ class CounterAnimation {
     }
 
     init() {
-        this.number = this.DOM.element.innerText;
-
-        this.DOM.element.innerText = "0";
-
         if (this.DOM.element.dataset.counterDuration) {
             this.duration = this.DOM.element.dataset.counterDuration;
         }
 
+        // Obtener el contenido del elemento
+        const content = this.DOM.element.textContent;
+
+        let cleanNumber;
+
         if (this.regionFormat != "en-US") {
-            this.target = this.number.replace(/\./g, "");
+            cleanNumber = content.replace(/\./g, "");
         } else {
-            this.target = this.number.replace(/,/g, "");
+            cleanNumber = content.replace(/,/g, "");
         }
 
-        gsap.to(this.DOM.element, {
-            duration: this.duration,
-            innerText: this.target,
-            ease: "power2.out",
-            onUpdate: () => {
-                this.DOM.element.innerText = Math.round(this.DOM.element.innerText).toLocaleString(this.regionFormat);
-            },
-            scrollTrigger: {
-                trigger: this.DOM.element,
-                start: `top ${this.scrollStart}`,
-            },
-        });
+        const number = cleanNumber.match(/\d+/g);
+
+        if (number !== null) {
+            // Reemplazar los números con el mismo contenido, pero dentro de una etiqueta <span>
+            const updatedContent = cleanNumber.replace(/\d+/g, (match) => `<span>${match}</span>`);
+
+            // Actualizar el contenido del elemento <p> con el nuevo contenido modificado
+            this.DOM.element.innerHTML = updatedContent;
+
+            // Obtener todos los elementos <span> creados
+            const numberSpan = this.DOM.element.querySelector("span");
+
+            this.target = numberSpan.innerText;
+
+            numberSpan.innerText = "0";
+
+            gsap.to(numberSpan, {
+                duration: this.duration,
+                innerText: this.target,
+                ease: "power2.out",
+                onUpdate: () => {
+                    numberSpan.innerText = Math.round(numberSpan.innerText).toLocaleString(this.regionFormat);
+                },
+                scrollTrigger: {
+                    trigger: this.DOM.element,
+                    start: `top ${this.scrollStart}`,
+                },
+            });
+        }
     }
 }
 
