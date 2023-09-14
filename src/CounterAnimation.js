@@ -18,7 +18,6 @@ class CounterAnimation {
     }
 
     init() {
-        console.log(this.markers)
         if (this.DOM.element.dataset.counterDuration) {
             this.duration = this.DOM.element.dataset.counterDuration
         }
@@ -50,7 +49,7 @@ class CounterAnimation {
 
             numberSpan.innerText = "0"
 
-            gsap.to(numberSpan, {
+            this.tl = gsap.to(numberSpan, {
                 duration: this.duration,
                 innerText: this.target,
                 ease: "power2.out",
@@ -67,6 +66,20 @@ class CounterAnimation {
                     markers: this.markers,
                 },
             })
+        }
+    }
+
+    refresh() {
+        if (this.tl) {
+            if (this.tl.scrollTrigger) {
+                this.tl.scrollTrigger.refresh()
+            }
+        }
+    }
+
+    destroy() {
+        if (this.tl) {
+            this.tl.scrollTrigger.kill()
         }
     }
 }

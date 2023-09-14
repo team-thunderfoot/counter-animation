@@ -13,7 +13,7 @@ class Page {
                 duration: 1.5,
                 scrollStart: "center",
                 // pinnedContainer: null,
-                // markers: false,
+                // markers: true,
             })
         })
 

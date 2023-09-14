@@ -61,3 +61,9 @@ new Index()
 • `markers (optional):` Whether to display markers for ScrollTrigger. **The default value is false**. Allowed value: "boolean"
 
 • `pinnedContainer (optional):` It is used when having pinned elements inside another pinned element. It is not necessary to set it if it is not the mentioned use case. It is necessary for example, when we use horizontal scroll in the same page. **The default value is null**. Allowed value: "Element / String"
+
+## Usefull Events
+
+. `destroy ()` : Kills the ScrollTrigger instance, immediately unpinning and restoring any pin-related changes made to the DOM by ScrollTrigger and removing all scroll-related listeners.
+
+. refresh() : Recalculates the positioning of all of the ScrollTriggers on the page; this typically happens automatically when the window/scroller resizes
