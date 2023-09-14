@@ -1,8 +1,8 @@
-import CounterAnimation from "./CounterAnimation";
+import CounterAnimation from "./CounterAnimation"
 
 class Page {
     constructor() {
-        this.init();
+        this.init()
     }
     init() {
         document.querySelectorAll(".example-1").forEach((element) => {
@@ -12,17 +12,19 @@ class Page {
                 separator: ",",
                 duration: 1.5,
                 scrollStart: "center",
-            });
-        });
+                // pinnedContainer: null,
+                // markers: false,
+            })
+        })
 
         document.querySelectorAll(".example-2").forEach((element) => {
             new CounterAnimation({
                 element: element,
                 regionFormat: "es-ES",
                 separator: ".",
-            });
-        });
+            })
+        })
     }
 }
-export default Page;
-new Page();
+export default Page
+new Page()
